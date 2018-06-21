@@ -1,29 +1,29 @@
 <template>
   <div class="sidebar">
-    <h1> This page Sidebar </h1>
+    <h2> Sidebar </h2>
+    <member v-for="member in members" :member="member"/>
   </div>
 </template>
 
 <script>
-export default {
+  import Member from './Member'
+  import { mapGetters } from 'vuex'
 
-}
+  export default {
+    computed: {
+      ...mapGetters([
+        'members'
+      ])
+    },
+    components: {
+      Member
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  .sidebar {
+    flex: 1;
+  }
 </style>

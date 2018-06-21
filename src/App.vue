@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1> Member App </h1>
     <mainview/>
     <sidebar/> 
   </div>
@@ -27,5 +26,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  display: flex;
 }
 </style>

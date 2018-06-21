@@ -1,26 +1,32 @@
 <template>
   <div class="mainview">
-    <div class="members" v-for="member in members">
-      <h3>{{ member.name }} - {{ member.point }}</h3>
-      <img :src="'./static/images/' + member.img" width="200">
-    </div>
+    <h1> Member App </h1>
+    <member v-for="member in members" :member="member"></member>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 
-export default {
-  computed: {
-    ...mapGetters([
-      'members'
-    ])
+  import Member from './Member'
+  import { mapGetters } from 'vuex'
+
+  export default {
+    computed: {
+      ...mapGetters([
+        'members'
+      ])
+    },
+    components: {
+      Member
+    }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.mainview {
+  flex: 3;
+}
 h1, h2 {
   font-weight: normal;
 }
