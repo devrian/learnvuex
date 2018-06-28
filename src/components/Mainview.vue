@@ -9,7 +9,7 @@
 
   import Member from './Member'
   import { mapGetters } from 'vuex'
-
+ 
   export default {
     computed: {
       ...mapGetters([
